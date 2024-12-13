@@ -50,7 +50,8 @@ def load_and_split_data(data_path: str,
     
     assert len(train_data) > len(test_data), "Train data should be larger than test data"
 
-    return train_data, test_data
+    return train_data.reset_index(drop=True), test_data.reset_index(drop=True)
+
 
 def main():
     data_path = "./datasets/creditcard_2023.csv"
