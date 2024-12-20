@@ -20,9 +20,10 @@ def main(dataloc: str, start:int, end:int):
 
 
 if __name__== "__main__":
-    start = int(sys.argv[1])
-    end = int(sys.argv[2])
+    datapath = sys.argv[1]
+    start = int(sys.argv[2])
+    end = int(sys.argv[3])
     
-    dataloc = "datasets/creditcard_2023.csv"
+    dataloc = f"{datapath}/datasets/creditcard_2023.csv"
     main(dataloc, start, end)
 
