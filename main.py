@@ -24,6 +24,6 @@ if __name__== "__main__":
     start = int(sys.argv[2])
     end = int(sys.argv[3])
     
-    dataloc = f"{datapath}/datasets/creditcard_2023.csv"
+    dataloc = f"{datapath}/creditcard_2023.csv"
     main(dataloc, start, end)
 
