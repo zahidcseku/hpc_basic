@@ -11,7 +11,7 @@ if [[ "$(hostname)" == "hpc.petrichor.csiro.au" ]]; then
     REPO_PATH="$HOME/hpc_basic"
     DATA_PATH="$SCRATCH3DIR/hpc_basic"
     PYTHON_PATH="python3"
-    module load python
+    module load python/3.11.0
 else
     REPO_PATH="C:/zahids files/git_repos/Leveraging HPC Clusters for Big Data ML Training"    
     DATA_PATH="C:/zahids files/git_repos/Leveraging HPC Clusters for Big Data ML Training/datasets"
