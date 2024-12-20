@@ -4,6 +4,7 @@
 LOCAL_PATH="C:/zahids files/git_repos/Leveraging HPC Clusters for Big Data ML Training"
 BRANCH="main"
 MAIN_SCRIPT="main.py"
+$PYTHON_PATH="~/AppData/Local/miniconda3/python.exe"
 
 # Change to the repository directory
 cd "$LOCAL_PATH"
@@ -25,7 +26,7 @@ if [ $? -eq 0 ]; then
     echo "Repository synced successfully"
     
     # Run the Python script
-    python3 $MAIN_SCRIPT
+    $PYTHON_PATH $MAIN_SCRIPT
 else
     echo "Failed to sync repository"
     exit 1
