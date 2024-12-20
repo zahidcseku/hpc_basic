@@ -4,7 +4,7 @@
 LOCAL_PATH="C:/zahids files/git_repos/Leveraging HPC Clusters for Big Data ML Training"
 BRANCH="main"
 MAIN_SCRIPT="main.py"
-$PYTHON_PATH="python"
+PYTHON_PATH="python"
 
 # Change to the repository directory
 cd "$LOCAL_PATH"
