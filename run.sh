@@ -11,7 +11,7 @@ HOSTNAME=$(hostname)
 echo "Hostname: $HOSTNAME"
 
 # Detect if we are on a local PC or HPC
-if [[ "$(hostname)" == "hpc.petrichor.csiro.au" ]]; then
+if [[ "$(hostname)" == "petrichor-login" ]]; then
     REPO_PATH="$HOME/hpc_basic"
     DATA_PATH="$SCRATCH3DIR/hpc_basic"
     PYTHON_PATH="python3"
