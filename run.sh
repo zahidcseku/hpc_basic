@@ -8,8 +8,8 @@ END_ID=100
 
 # Detect if we are on a local PC or HPC
 if [[ "$(hostname)" == "hpc.petrichor.csiro.au" ]]; then
-    REPO_PATH="/home/Leveraging HPC Clusters for Big Data ML Training"
-    DATA_PATH="/scratch3/Leveraging HPC Clusters for Big Data ML Training"
+    REPO_PATH="$HOME/hpc_basic"
+    DATA_PATH="$SCRATCH3DIR/hpc_basic"
     PYTHON_PATH="python3"
     module load python
 else
