@@ -5,7 +5,7 @@ MAIN_SCRIPT="main.py"
 START_ID=0
 END_ID=100
 
-
+echo $hostname
 # Detect if we are on a local PC or HPC
 if [[ "$(hostname)" == "hpc.petrichor.csiro.au" ]]; then
     REPO_PATH="$HOME/hpc_basic"
