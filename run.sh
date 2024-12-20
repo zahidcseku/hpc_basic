@@ -29,7 +29,7 @@ if [ $? -eq 0 ]; then
     echo "Repository synced successfully"
     
     # Run the Python script
-    $PYTHON_PATH $MAIN_SCRIPT $"LOCAL_PATH" $START_ID $END_ID
+    $PYTHON_PATH $MAIN_SCRIPT "$LOCAL_PATH" $START_ID $END_ID
 else
     echo "Failed to sync repository"
     exit 1
