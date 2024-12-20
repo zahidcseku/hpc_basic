@@ -16,11 +16,18 @@ else
     PYTHON_PATH="python"
 fi
 
+echo "$PATH"
+
 # Change to the repository directory
 cd "$PATH"
 
-# Fetch the latest changes from the remote repository
-git fetch origin $BRANCH
+# Check if there are any changes in the remote repository
+if git remote update && git status -uno | grep -q 'Your branch is behind'; then
+    # Fetch the latest changes from the remote repository
+    git fetch origin $BRANCH
+else
+    echo "No changes detected in the remote repository."
+fi
 
 # Check for unsynced changes
 if ! git diff-index --quiet HEAD --; then
