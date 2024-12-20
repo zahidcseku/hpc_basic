@@ -9,11 +9,11 @@ END_ID=100
 # Detect if we are on a local PC or HPC
 if [[ "$(hostname)" == "hpc.petrichor.csiro.au" ]]; then
     PATH="/home/Leveraging HPC Clusters for Big Data ML Training"
-    PYTHON_PATH="python"
-else
-    PATH="C:/zahids files/git_repos/Leveraging HPC Clusters for Big Data ML Training"
     PYTHON_PATH="python3"
     module load python
+else
+    PATH="C:/zahids files/git_repos/Leveraging HPC Clusters for Big Data ML Training"    
+    PYTHON_PATH="python"
 fi
 
 # Change to the repository directory
