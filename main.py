@@ -4,7 +4,7 @@ from tqdm.auto import tqdm
 import sys
 
 
-def main(dataloc: str, start:int, end:int):
+def main(dataloc:str, start:int, end:int):
     # get the train and test datasets
     traindata, testdata = load_and_split_data(dataloc)
     features, target = get_feature_target_names()
