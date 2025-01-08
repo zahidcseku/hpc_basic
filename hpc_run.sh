@@ -3,7 +3,7 @@
 # Define the total number of tasks
 NTASKS=50
 # Define the total number of samples
-NSAMPLES=568630 
+NSAMPLES=227452 
 # Set the directory for job files
 JOB_DIR=$PWD/.jobs
 # Calculate the size of each task (samples per task)
