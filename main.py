@@ -23,6 +23,7 @@ if __name__== "__main__":
     datapath = sys.argv[1]
     start = int(sys.argv[2])
     end = int(sys.argv[3])
+    print(start, end)
     
     dataloc = f"{datapath}/creditcard_2023.csv"
     main(dataloc, start, end)
