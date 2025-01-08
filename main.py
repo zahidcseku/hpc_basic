@@ -2,6 +2,7 @@ from hpc_run.dataloader import load_and_split_data, get_feature_target_names
 from hpc_run.modeltrainer import find_neighbours
 from tqdm.auto import tqdm
 import sys
+import os
 
 
 def main(dataloc:str, start:int, end:int):
@@ -17,6 +18,11 @@ def main(dataloc:str, start:int, end:int):
         ids = find_neighbours(row[features].values.reshape(1, -1), traindata[features])
         
         labels.append(traindata.loc[ids[0], target].mode()[0])
+    
+    # save the labels to pdf file
+    os.makedirs("fraud_outputs", exist_ok=True)
+    testdata['knnlabels'] = labels
+    testdata.to_csv(f"fraud_outputs/out_{start}_{end}.csv", index=False)
 
 
 if __name__== "__main__":

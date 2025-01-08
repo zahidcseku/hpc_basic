@@ -57,4 +57,4 @@ else
 fi
 
 # Log start time
-echo "Job started at: $(date)"
+echo "Job ended at: $(date)"
