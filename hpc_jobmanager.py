@@ -8,8 +8,8 @@ start_time = time()
 # Define the total number of tasks
 NTASKS=50
 
-# Define the total number of samples
-NSAMPLES=568630 
+# Define the total number of test samples
+NSAMPLES=227452 
 
 # Set the directory for job files
 JOB_DIR=f"{os.getcwd()}/.jobs"
