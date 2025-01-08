@@ -33,6 +33,7 @@ for i in $(seq 1 $NTASKS); do
 #SBATCH --mem=2gb
 #SBATCH --ntasks=1
 #SBATCH --nodes=1
+#SBATCH --account=OD-235759
 
 # Load Python module
 module load python/3.12.3
