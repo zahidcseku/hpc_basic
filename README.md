@@ -12,11 +12,16 @@ As machine learning models and datasets grow in size and complexity, training th
 
 ## Contents
 
-- `parallel_processing.py`: Example script showing how to adapt code for parallel processing.
-- `job_submission.sh`: SLURM job submission script template.
-- `data_preprocessing/`: Scripts for preparing and splitting large datasets.
-- `model_training/`: ML model training scripts optimized for HPC environments.
-- `result_analysis/`: Scripts for aggregating and analyzing results from parallel jobs.
+- `hpc_run/`: main scripts for data processing
+    - `dataloader.py`: splits the dataset into train and test sets.
+    - `modeltrainer.py`: includes a function to find labels based on k neighbours.
+- `tests/`: includes the unit tests.
+- `main.py`: include the main loop that assigns a label to all the selected test instances.
+- `hpc_jobmanager.py`: creates SLURM job submission scripts and submits the jobs.
+- `hpc_run.sh`: a sample bash script for a single SLURM job. Note that `hpc_jobmanager.py` will create a set of SLURM jobs based on our specified tasks and automatically submit those jobs to the job queue.
+- `run.sh`: a simple bash script to run the program on a local or remote machine. 
+
+
 
 ## Prerequisites
 
@@ -36,7 +41,7 @@ As machine learning models and datasets grow in size and complexity, training th
 
 - Always test your code on a small subset of data before submitting large jobs.
 - Use appropriate file systems for different stages of your workflow (e.g., $SCRATCH for temporary data, $HOME for scripts).
-- Monitor your job's resource usage and adjust as necessary.
+- Monitor your job's resource usage and adjust the SLURM parameters as necessary.
 - Remember to transfer your results to persistent storage after job completion.
 
 ## Contributing
