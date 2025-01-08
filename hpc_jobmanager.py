@@ -39,7 +39,7 @@ for i in range(NTASKS):
     with open(job_filename, "w") as f:
         f.writelines(
 f"""#!/bin/bash
-#SBATCH --job-name=jobname
+#SBATCH --job-name={jobname}
 #SBATCH --output=.out/fraud_detection{i}.out
 #SBATCH --error=.out/fraud_detection{i}.err
 #SBATCH --time=1-00:00
