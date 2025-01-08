@@ -21,6 +21,8 @@ def main(dataloc:str, start:int, end:int):
     
     # save the labels to pdf file
     os.makedirs("fraud_outputs", exist_ok=True)
+    
+    testdata = testdata.loc[start:end, :].reset_index()
     testdata['knnlabels'] = labels
     testdata.to_csv(f"fraud_outputs/out_{start}_{end}.csv", index=False)
 
