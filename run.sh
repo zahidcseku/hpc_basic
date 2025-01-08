@@ -2,8 +2,8 @@
 
 BRANCH="main"
 MAIN_SCRIPT="main.py"
-START_ID=0
-END_ID=4549
+START_ID=$1
+END_ID=$2
 
 
 # Get the hostname
