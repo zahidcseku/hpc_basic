@@ -20,11 +20,12 @@ def main(dataloc:str, start:int, end:int):
         labels.append(traindata.loc[ids[0], target].mode()[0])
     
     # save the labels to pdf file
-    os.makedirs("fraud_outputs", exist_ok=True)
+    output_dir = f"{dataloc}/fraud_outputs"
+    os.makedirs(output_dir, exist_ok=True)
     
     testdata = testdata.loc[start:end, :].reset_index()
     testdata['knnlabels'] = labels
-    testdata.to_csv(f"fraud_outputs/out_{start}_{end}.csv", index=False)
+    testdata.to_csv(f"{output_dir}/out_{start}_{end}.csv", index=False)
 
 
 if __name__== "__main__":
