@@ -1,1 +1,9 @@
 **/datasets/
+**/.jobs/
+**/.out/
+**/.pytest_cache/
+**/dist/
+**/__pycache__/
+*.png
+*.lock
+*.toml

@@ -46,10 +46,3 @@ Contributions to improve the code or documentation are welcome. Please submit a 
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Acknowledgments
-
-- Thanks to [Your HPC Center Name] for providing computational resources.
-- This work was supported by [Your Funding Source/Grant Information].
-
-
