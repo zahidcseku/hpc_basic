@@ -9,8 +9,6 @@ outputs = []
 for file in glob(f"{output_dir}/*.csv"):
     df = pd.read_csv(file, index_col=False)
     outputs.append(df)
-    print(df.shape)
-    exit()
 
 # merge the results
 merged_output = pd.concat(outputs).drop_duplicates().reset_index()
