@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Log start time
+echo "Job started at: $(date)"
+
 BRANCH="main"
 MAIN_SCRIPT="main.py"
 START_ID=$1
@@ -52,3 +55,6 @@ else
     echo "Failed to sync repository"
     exit 1
 fi
+
+# Log start time
+echo "Job started at: $(date)"
