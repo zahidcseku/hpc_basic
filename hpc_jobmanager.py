@@ -24,6 +24,7 @@ print(f"Size of each task: {SIZE}")
 os.makedirs(JOB_DIR, exist_ok=True)
 os.makedirs(".out", exist_ok=True)
 
+job_queue = []
 # Loop to create job files
 for i in range(NTASKS):
     # Define the job file path
@@ -32,11 +33,13 @@ for i in range(NTASKS):
     START = i * SIZE
     END = START + SIZE
     
+    jobname = f"fraud_detection{i}.job"
+    job_queue.append(jobname)
     # Create job files
     with open(job_filename, "w") as f:
         f.writelines(
 f"""#!/bin/bash
-#SBATCH --job-name=fraud_detection{i}.job
+#SBATCH --job-name=jobname
 #SBATCH --output=.out/fraud_detection{i}.out
 #SBATCH --error=.out/fraud_detection{i}.err
 #SBATCH --time=1-00:00
@@ -57,14 +60,3 @@ chmod +x "${job_filename}"
  
     # Submit the job
     os.system(f"sbatch {job_filename}")
-
-# aggregate the results
-output_files = []
-for file in glob(f"fraud_outputs/*.csv"):
-    df = pd.read_csv(file, index_col=False)
-    output_files.append(df)
-
-output_file = pd.concat(output_files)
-output_file.to_csv(f"full_result.csv", index=False)
-
-print(f"Total execution time: {time()-start_time:.4f} seconds")
