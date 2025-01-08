@@ -35,8 +35,7 @@ for i in range(NTASKS):
     # Create job files
     with open(job_filename, "w") as f:
         f.writelines(
-f"""
-#!/bin/bash
+f"""#!/bin/bash
 #SBATCH --job-name=fraud_detection{i}.job
 #SBATCH --output=.out/fraud_detection{i}.out
 #SBATCH --error=.out/fraud_detection{i}.err
