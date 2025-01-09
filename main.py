@@ -5,9 +5,9 @@ import sys
 import os
 
 
-def main(dataloc:str, start:int, end:int):
+def main(datapath:str, datafilename:str, start:int, end:int):
     # get the train and test datasets
-    traindata, testdata = load_and_split_data(dataloc)
+    traindata, testdata = load_and_split_data(f"{datapath}/{datafilename}")
     features, target = get_feature_target_names()
     
     labels = []
@@ -20,7 +20,7 @@ def main(dataloc:str, start:int, end:int):
         labels.append(traindata.loc[ids[0], target].mode()[0])
     
     # save the labels to pdf file
-    output_dir = f"{dataloc}/fraud_outputs"
+    output_dir = f"{datapath}/fraud_outputs"
     os.makedirs(output_dir, exist_ok=True)
     
     testdata = testdata.loc[start:end, :].reset_index()
@@ -34,6 +34,6 @@ if __name__== "__main__":
     end = int(sys.argv[3])
     print(start, end)
     
-    dataloc = f"{datapath}/creditcard_2023.csv"
-    main(dataloc, start, end)
+    datafilename = "creditcard_2023.csv"
+    main(datapath, datafilename, start, end)
 
