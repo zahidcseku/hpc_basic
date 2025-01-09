@@ -43,10 +43,7 @@ f"""#!/bin/bash
 #SBATCH --mem=2gb
 #SBATCH --ntasks=1
 #SBATCH --nodes=1
-#SBATCH --account=OD-235759
  
-# Load Python module
-module load python/3.12.3
 # Run the main script with start and end indices
 sh ./run.sh {START} {END}
 
